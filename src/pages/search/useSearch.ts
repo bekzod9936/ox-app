@@ -58,11 +58,14 @@ export const useSearch = () => {
       {
         title: 'Product Type',
         dataIndex: 'name',
+        render: (value) => (value === '' || !value ? '-' : value),
+        sorter: (a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0),
       },
 
       {
         title: 'Product Id',
         dataIndex: 'product',
+        sorter: (a, b) => a.product - b.product,
       },
       {
         title: 'Supplier',

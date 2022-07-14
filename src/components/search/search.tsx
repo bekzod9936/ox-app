@@ -72,5 +72,5 @@ export const getSearchTable = (
       setTimeout(() => searchInput.current.select(), 100)
     }
   },
-  render: (text) => text,
+  render: (value) => (value === '' || !value ? '-' : value),
 })

@@ -35,5 +35,6 @@ module.exports = {
     'react/button-has-type': 'off',
     'no-underscore-dangle': 'off',
     'react/require-default-props': 'off',
+    'no-nested-ternary': 'off',
   },
 }
