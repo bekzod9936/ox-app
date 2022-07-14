@@ -51,14 +51,15 @@ export const useSearch = () => {
   const columns: ColumnsType<DataType> = useMemo(
     () => [
       {
-        title: 'Name',
-        dataIndex: 'name',
+        title: 'Product Name',
+        dataIndex: 'productName',
         ...getSearchTable(searchInput, handleSearch, handleReset),
       },
       {
-        title: 'Product Name',
-        dataIndex: 'productName',
+        title: 'Product Type',
+        dataIndex: 'name',
       },
+
       {
         title: 'Product Id',
         dataIndex: 'product',
