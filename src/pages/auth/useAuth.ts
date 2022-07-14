@@ -4,16 +4,16 @@ import { useNavigate } from 'react-router-dom'
 import { Form, message } from 'antd'
 
 interface FormType {
-  _username: string
-  _password: string
-  _subdomain: string
+  username: string
+  password: string
+  subdomain: string
 }
 
 export const useAuth = () => {
   const [form] = Form.useForm()
   const navigate = useNavigate()
   const { isLoading, mutateAsync } = useMutation(fetchAuthPost)
-  const onFinish = async (values: FormType) =>
+  const onFinish = async (values: FormType) => {
     mutateAsync(values)
       .then((response) => {
         if (response.ok) {
@@ -22,15 +22,16 @@ export const useAuth = () => {
         throw new Error(`${response.status} ${response.statusText}`)
       })
       .then(async (res) => {
-        await localStorage.setItem('subdomin', form.getFieldValue('_subdomain'))
+        await localStorage.setItem('subdomin', form.getFieldValue('subdomain'))
         await localStorage.setItem('token', JSON.stringify(res))
-        await navigate('/app')
+        await navigate('/app/products')
         await form.resetFields()
         await message.success('Successfully authorized !!!')
       })
       .catch((error) => {
         message.error(error.message)
       })
+  }
 
   return {
     form,

@@ -1,15 +1,17 @@
 interface FormType {
-  _username: string
-  _password: string
-  _subdomain: string
+  username: string
+  password: string
+  subdomain: string
 }
 
 export const fetchAuthPost = (data: FormType) =>
-  fetch(`https://${data._subdomain}.ox-sys.com/security/auth_check`, {
+  fetch(`https://${data.subdomain}.ox-sys.com/security/auth_check`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
       Accept: 'application/json',
     },
-    body: `_username=${data._username}&_password=${data._password}&_subdomain=${data._subdomain}`,
+    body: Object.entries(data)
+      .map((v) => `_${v[0]}=${v[1]}`)
+      .join('&'),
   })

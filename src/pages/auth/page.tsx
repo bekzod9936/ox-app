@@ -21,7 +21,7 @@ export const AuthPage = () => {
         >
           <Form.Item
             label='Username'
-            name='_username'
+            name='username'
             rules={[
               {
                 required: true,
@@ -34,7 +34,7 @@ export const AuthPage = () => {
 
           <Form.Item
             label='Password'
-            name='_password'
+            name='password'
             rules={[
               {
                 required: true,
@@ -46,7 +46,7 @@ export const AuthPage = () => {
           </Form.Item>
           <Form.Item
             label='Subdomain'
-            name='_subdomain'
+            name='subdomain'
             rules={[
               {
                 required: true,
