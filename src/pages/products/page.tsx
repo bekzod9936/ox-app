@@ -11,7 +11,7 @@ export const ProductsPage = memo(() => {
       columns={columns}
       dataSource={data}
       pagination={pagination}
-      scroll={{ x: true, y: 500 }}
+      scroll={{ x: 1000, y: 500 }}
       onChange={handleTableChange}
       loading={isLoading || isFetching}
     />
