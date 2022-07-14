@@ -1,0 +1,1 @@
+export { getSearchTable } from './search'
