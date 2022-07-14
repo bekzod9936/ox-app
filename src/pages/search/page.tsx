@@ -1,7 +1,8 @@
 import { Table } from 'antd'
+import { memo } from 'react'
 import { useSearch } from './useSearch'
 
-export const SearchPage = () => {
+export const SearchPage = memo(() => {
   const { data, columns, pagination, isLoading, isFetching, handleTableChange } = useSearch()
 
   return (
@@ -15,4 +16,4 @@ export const SearchPage = () => {
       loading={isLoading || isFetching}
     />
   )
-}
+})

@@ -1,14 +1,14 @@
 import { useNavigate, NavLink } from 'react-router-dom'
 import { Button } from 'antd'
-import { useCallback } from 'react'
+import { memo, useCallback } from 'react'
 import { Nav, Container } from './style'
 
-export const Header = () => {
+export const Header = memo(() => {
   const navigate = useNavigate()
-  const handleLogOut = useCallback(async () => {
-    await localStorage.removeItem('token')
-    await localStorage.removeItem('subdomin')
-    await navigate('/')
+  const handleLogOut = useCallback(() => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('subdomin')
+    navigate('/')
   }, [])
 
   return (
@@ -40,4 +40,4 @@ export const Header = () => {
       </Button>
     </Container>
   )
-}
+})

@@ -24,7 +24,7 @@ export const useAuth = () => {
     }
   }, [])
 
-  const onFinish = async (values: FormType) => {
+  const onFinish = (values: FormType) => {
     mutateAsync(values)
       .then((response) => {
         if (response.ok) {
