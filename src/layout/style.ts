@@ -9,6 +9,6 @@ export const Main = styled.main`
   height: calc(100% - 80px);
   background-color: var(--gray);
   @media (max-width: ${device.mobile}) {
-    height: 100%;
+    height: fit-content;
   }
 `

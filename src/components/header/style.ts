@@ -6,12 +6,15 @@ export const Container = styled.header`
   display: flex;
   padding: 0 24px;
   align-items: center;
+  background-color: white;
   justify-content: space-between;
 `
 
 export const Nav = styled.nav`
   ul {
+    margin: 0;
     display: flex;
+    align-items: center;
     list-style-type: none;
     li {
       margin-right: 20px;

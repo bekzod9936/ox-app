@@ -26,7 +26,9 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
-
+#root {
+  background-color: var(--gray);
+}
 :root {
   --blue: #1890ff;
   --gray: #eaeaea;
