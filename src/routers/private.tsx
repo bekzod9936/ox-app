@@ -9,5 +9,8 @@ export const PrivateRouter = ({ children }: PropsType) => {
   const token = getStorageToken()
   const location = useLocation()
 
-  return token ? children : <Navigate to='/' state={{ from: location }} replace />
+  if (!token) {
+    return <Navigate to='/' state={{ from: location }} replace />
+  }
+  return children
 }

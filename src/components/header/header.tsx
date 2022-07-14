@@ -5,11 +5,11 @@ import { Nav, Container } from './style'
 
 export const Header = () => {
   const navigate = useNavigate()
-  const handleLogOut = useCallback(() => {
-    localStorage.removeItem('token')
-    localStorage.removeItem('subdomin')
-    navigate('/')
-  }, [])
+  const handleLogOut = async () => {
+    await localStorage.removeItem('token')
+    await localStorage.removeItem('subdomin')
+    await navigate('/')
+  }
 
   return (
     <Container>
