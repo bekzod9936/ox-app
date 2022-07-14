@@ -40,6 +40,8 @@ export const useProducts = () => {
       {
         title: 'Product Name',
         dataIndex: 'productName',
+        sorter: (a, b) =>
+          a.productName < b.productName ? -1 : a.productName > b.productName ? 1 : 0,
         render: (value) => (value === '' || !value ? '-' : value),
       },
       {

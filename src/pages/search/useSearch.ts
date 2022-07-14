@@ -53,6 +53,8 @@ export const useSearch = () => {
       {
         title: 'Product Name',
         dataIndex: 'productName',
+        sorter: (a, b) =>
+          a.productName < b.productName ? -1 : a.productName > b.productName ? 1 : 0,
         ...getSearchTable(searchInput, handleSearch, handleReset),
       },
       {
