@@ -42,7 +42,7 @@ export const AuthPage = () => {
               },
             ]}
           >
-            <Input.Password />
+            <Input.Password autoComplete='on' />
           </Form.Item>
           <Form.Item
             label='Subdomain'

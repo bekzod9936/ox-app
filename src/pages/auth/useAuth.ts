@@ -2,6 +2,8 @@ import { fetchAuthPost } from 'api/auth'
 import { useMutation } from 'react-query'
 import { useNavigate } from 'react-router-dom'
 import { Form, message } from 'antd'
+import { useEffect } from 'react'
+import { getStorageToken } from 'utils/storageToken'
 
 interface FormType {
   username: string
@@ -12,7 +14,16 @@ interface FormType {
 export const useAuth = () => {
   const [form] = Form.useForm()
   const navigate = useNavigate()
+  const token = getStorageToken()
+
   const { isLoading, mutateAsync } = useMutation(fetchAuthPost)
+
+  useEffect(() => {
+    if (token) {
+      navigate('/app/products')
+    }
+  }, [])
+
   const onFinish = async (values: FormType) => {
     mutateAsync(values)
       .then((response) => {
