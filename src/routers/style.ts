@@ -11,5 +11,5 @@ export const WrapSpin = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100% - 80px);
+  height: 100%;
 `
